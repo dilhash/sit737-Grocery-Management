@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Three-Tier App Front-End</title>
+</head>
+<body>
+    <h1>Front-End for Three-Tier Architecture</h1>
+    <p id="message"></p>
+
+    <script>
+        fetch('/api/message')  // Updated URL to access the route in Express server
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('message').textContent = data;
+            })
+            .catch(error => console.error(error));
+    </script>
+</body>
+</html>
